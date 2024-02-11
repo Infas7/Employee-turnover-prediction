@@ -1,0 +1,82 @@
+{% extends "layout.html"%}
+{% block content %}
+<div class="container mt-3">
+    <h2 class="text-center">Employee Turnover Prediction</h2>
+    <div style="margin-top: 100px;"></div>
+    <form action="/single-predict" method="POST" class="row g-3 justify-content-center">
+        {% if error %}
+            <div class="alert alert-danger alert-dismissible fade show mt-3" role="alert">
+                {{ error }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% endif %}
+        <div class="col-md-4">
+            <label for="satisfaction_level" class="form-label" data-bs-toggle="tooltip" data-bs-placement="top"
+                data-bs-title="Should be a value 0 to 1">Satisfaction Level (0 - 1):</label>
+            <input type="text" name="satisfaction_level" class="form-control" placeholder="Ex: 0.38">
+        </div>
+        <div class="col-md-4">
+            <label for="last_evaluation" class="form-label" data-bs-toggle="tooltip" data-bs-placement="top"
+                data-bs-title="Should be a value 0 to 1">Last Evaluation (0 - 1):</label>
+            <input type="text" name="last_evaluation" class="form-control" placeholder="Ex: 0.53">
+        </div>
+        <div class="col-md-4">
+            <label for="number_project" class="form-label">Number of Projects Worked on:</label>
+            <input type="number" name="number_project" class="form-control" placeholder="Ex: 5">
+        </div>
+        <div class="col-md-4">
+            <label for="average_montly_hours" class="form-label">Average Total Monthly Working Hours:</label>
+            <input type="number" name="average_montly_hours" class="form-control" placeholder="Ex: 157">
+        </div>
+        <div class="col-md-4">
+            <label for="time_spend_company" class="form-label">Time Spent in the Company (years):</label>
+            <input type="number" name="time_spend_company" class="form-control" placeholder="Ex: 3">
+        </div>
+        <div class="col-md-4">
+            <label for="i_Work_accident" class="form-label">Met with a Work Accident ?</label>
+            <select name="Work_accident" id="i_Work_accident" class="form-select">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+        </div>
+        <div class="col-md-4">
+            <label for="i_promotion_last_5years" class="form-label">Got Promoted in Last 5 Years ?</label>
+            <select name="promotion_last_5years" id="i_promotion_last_5years" class="form-select">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+        </div>
+        <div class="col-md-4">
+            <label for="i_department" class="form-label">Department:</label>
+            <select id="i_department" name="department" class="form-select">
+                <option value="sales">Sales</option>
+                <option value="accounting">Accounting</option>
+                <option value="hr">HR</option>
+                <option value="technical">Technical</option>
+                <option value="support">Support</option>
+                <option value="management">Management</option>
+                <option value="IT">IT</option>
+                <option value="product_mng">Product Management</option>
+                <option value="marketing">Marketing</option>
+                <option value="RandD">R&D</option>
+            </select>
+        </div>
+        <div class="col-md-4">
+            <label for="i_salary" class="form-label">Salary Level:</label>
+            <select id="i_salary" name="salary" class="form-select">
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+            </select>
+        </div>
+        <div class="col-md-12 text-center">
+            <button type="submit" class="btn btn-success">Predict</button>
+        </div>
+    </form>
+</div>
+
+<script>
+    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+</script>
+{% endblock%}

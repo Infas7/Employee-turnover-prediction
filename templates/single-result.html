@@ -1,0 +1,15 @@
+{% extends "layout.html"%}
+{% block content %}
+<div class="container mt-5 d-flex flex-column align-items-center" style="min-height: 100vh;">
+    {{ prediction }}
+    <p class="display-4 text-black">Employee will <span
+            class="{% if prediction == 1 %}text-danger{% else %}text-success{% endif %}">{{ "Leave" if prediction == 1
+            else "Stay" }}</span></p>
+
+    {% if prediction == 1 %}
+    <img src="../static/images/img1.avif" alt="Leave Image" class="img-fluid" style="max-width: 400px;">
+    {% else %}
+    <img src="../static/images/img2.avif" alt="Stay Image" class="img-fluid" style="max-width: 400px;">
+    {% endif %}
+</div>
+{% endblock%}

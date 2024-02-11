@@ -1,0 +1,9 @@
+satisfaction_level,last_evaluation,number_project,average_montly_hours,time_spend_company,Work_accident,left,promotion_last_5years,department,salary
+0.38,0.53,2,157,3,0,1,0,sales,low
+0.79,0.59,4,139,3,0,1,1,management,low
+0.11,0.79,6,292,4,0,1,1,technical,low
+0.46,0.45,2,138,3,0,1,1,IT,low
+0.48,0.94,5,255,6,0,0,0,accounting,medium
+0.81,0.57,3,224,2,0,0,0,hr,medium
+0.9,0.66,3,231,3,0,0,0,hr,medium
+0.98,0.66,5,248,3,0,0,0,technical,medium

@@ -1,0 +1,22 @@
+{% extends "layout.html"%}
+{% block content %}
+<div class="container mt-3">
+    <h2 class="mb-4">Predict for Multiple User Data</h2>
+    <form method="post" enctype="multipart/form-data" class="ms-auto">
+        {% if error %}
+            <div class="alert alert-danger alert-dismissible fade show mt-3" role="alert">
+                {{ error }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% endif %}
+        <div class="mb-3">
+            <label for="file" class="form-label">Upload a CSV file with employee data <span style="color: lightcoral; font-style: italic;">(Upload valid data values for accurate predictions)</span></label>
+            <input type="file" class="form-control" id="file" name="file" accept=".csv">
+        </div>
+        <div class="col-md-6 d-flex align-items-center justify-content-end">
+            <a href="/download-sample-csv" class="me-4" download="sample.csv">Download Sample CSV</a>
+            <button type="submit" class="btn btn-success mx-1">Predict</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

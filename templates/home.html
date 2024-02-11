@@ -1,0 +1,27 @@
+{% extends "layout.html"%}
+{% block content %}
+<div class="container mt-3">
+    <div class="container mt-3">
+        <div class="row justify-content-center">
+            <div class="col text-center">
+                <h1>Welcome!</h1>
+                <p class="lead">Unlock insights and make informed decisions with our employee turnover prediction tool.
+                </p>
+            </div>
+        </div>
+
+        <div class="row justify-content-center mt-3">
+            <div class="col-6">
+                <img src="../static/images/home-img.png" class="img-fluid" alt="employees-main-banner">
+            </div>
+        </div>
+
+        <div class="row justify-content-center mt-3">
+            <div class="col text-center">
+                <a href="/single-predict" class="btn btn-success mx-1">Quick Predict</a>
+                <a href="/batch-predict" class="btn btn-primary mx-1">Multiple data (CSV)</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock%}

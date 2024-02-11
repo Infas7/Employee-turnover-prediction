@@ -1,0 +1,55 @@
+{% extends "layout.html"%}
+{% block content %}
+<div class="container mt-4">
+    <h2 class="text-center">Employee Turnover Prediction Result</h2>
+
+    <div class="mb-4">
+        <h3 class="mb-3">Predicted Data</h3>
+        <table class="table table-bordered table-dark text-center">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Department</th>
+                    <th>Leave?</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for index, row in result_table.iterrows() %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ row['department'] }}</td>
+                    <td
+                        style="color: white; background-color: {% if row['prediction'] == 1 %}red{% else %}green{% endif %};">
+                        {% if row['prediction'] == 1 %}
+                        Yes
+                        {% else %}
+                        No
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <div>
+        <h3 class="">Department-wise Percentage of Employees Leaving</h3>
+        <table class="table table-bordered table-striped text-center">
+            <thead>
+                <tr>
+                    <th>Department</th>
+                    <th>Percentage of Leaving</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for department, percentage in department_leave_percentages.items() %}
+                <tr>
+                    <td>{{ department }}</td>
+                    <td>{{ '{:.2f}'.format(percentage) }}%</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
