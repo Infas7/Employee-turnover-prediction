@@ -5,3 +5,6 @@
 ![Screenshot 2023-12-19 232930](https://github.com/Infas7/Employee-turnover-prediction/assets/76855463/98779b3a-c128-4345-80b3-577a590fdd54)
 ![Screenshot 2023-12-19 233042](https://github.com/Infas7/Employee-turnover-prediction/assets/76855463/5fabdcb1-6d1a-4b51-b9fc-534ee604799e)
 ![Screenshot 2023-12-19 233115](https://github.com/Infas7/Employee-turnover-prediction/assets/76855463/a753eb2a-6cb8-4055-8898-a6f32a7ab451)
+
+
+Live site: https://employee-turnover-prediction-fhfh.onrender.com
