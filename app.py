@@ -127,4 +127,4 @@ def download_sample():
     return send_file('assets/csvs/sample.csv', as_attachment=True, download_name='sample.csv')
 
 if __name__ ==  "__main__":
-    app.run(debug=True)
+    app.run()
