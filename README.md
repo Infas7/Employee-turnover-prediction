@@ -8,3 +8,4 @@
 
 
 Live site: https://employee-turnover-prediction-fhfh.onrender.com
+Note: This site may take some time to load up due to cold start of the server
